@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單欄位sample</title>
+    <style>
+        #member_mod_form>* {
+            display: block;
+        }
+
+        #member_mod_form label {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- form用lebel -->
+    <!-- input:  很多種 search  password  checkbox...  -->
+    <!-- 一定要有name和 id -->
+    <!-- 表單按鈕送出submit -->
+    <!-- 基本三個都一樣的命名 -->
+    <!-- for跟id不能重複 只能一個指定 -->
+    <!-- title 導讀機 滑鼠一上去出現 -->
+    <!-- placeholder提示怎麼寫 -->
+    <!--  * required必填 -->
+    <!-- disable會反灰   reaadony沒看遍不好看出來 -->
+    <!-- required autocomplete="on" 自動輸入 -->
+    <!-- autofocus 方便輸入 但html會一開始就跑過去 -->
+    <!-- multiple 可輸入多個 -->
+    <!-- message留言區是使用者可以拉開 無法限制 -->
+    <!-- selete option 選單 -->
+    <!-- checked 預選 -->
+
+    <!-- form名稱 -->
+    <form name="search_form" id="search_form" action="" method="post">
+        <!-- 搜尋 -->
+        <label for="search">搜尋:</label>
+        <input type="search" name="search" id="search" style="width: 150px;">
+        <input type="submit" value="搜尋">
+    </form>
+    <hr>
+    <h2>會員資料修改</h2>
+    <!-- 標示避免被當成詐騙網站 -->
+    <small>(此表單僅展示示意，無任何收集資料的功能。)</small>
+    <form name="member_mod_form" id="member_mod_form" action="" method="post">
+        <!-- 姓名 -->
+        <label for="username">*姓名:</label>
+        <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on">
+
+        <!-- 帳號 -->
+        <label for="account">帳號:</label>
+        <input type="text" name="account" id="account" value="frandesign" disabled>
+
+        <!-- 密碼 -->
+        <label for="password">密碼:</label>
+        <input type="password" name="password" id="password" title="請輸入密碼" placeholder="請輸入密碼">
+
+        <!--確認密碼 -->
+        <label for="password2">密碼:</label>
+        <input type="password" name="password" id="password2" title="請再次輸入密碼" placeholder="請再次輸入密碼">
+
+        <!-- 身分證 -->
+        <!-- 最多10碼 -->
+        <label for="idnumber">身分證:</label>
+        <input type="text" name="idnumber" id="idnumber" maxlength="10" value="X123456789" readonly>
+
+        <!-- *email -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" title="請輸入email" placeholder="yourid@gmail.com" required
+            autocomplete="on">
+
+        <!-- *聯絡電話 -->
+        <label for="tel">聯絡電話:</label>
+        <input type="tel" name="tel" id="tel" maxlength="10" title="請輸入電話" placeholder="09-123456789" required
+            autocomplete="on">
+
+        <!-- 生日 -->
+        <label for="birthday">生日:</label>
+        <input type="date" name="birthday" id="birthday" title="請選擇生日日期">
+
+        <!-- 上傳檔案 -->
+        <label for="file">上傳檔案:</label>
+        <input type="file" name="file" id="file" title="請選擇上傳檔案" multiple>
+
+        <!-- 性別 -->
+        <!-- 第一個請選擇 避免使用者沒選到正確的 -->
+        <label for="sex">性別:</label>
+        <select name="sex" id="sex">
+            <option value="">請選擇</option>
+            <option value="生理男">生理男</option>
+            <option value="生理女">生理女</option>
+            <option value="其他">其他</option>
+        </select>
+
+        <!-- 會員類型 單選 -->
+        <!-- 用name判斷是不是同一組 -->
+        <!-- fieldset 框架 -->
+        <!-- legend標題 -->
+        <!-- 不要樣式全部設為0 -->
+        <fieldset style="width: 30%; margin-top: 30px;">
+            <legend>會員類型: </legend>
+            <!-- 一般會員 -->
+            <input type="radio" name="member" id="member1" value="一般會員">
+            <label for="member">一般會員</label>
+            <!-- 終身會員 -->
+            <input type="radio" name="member" id="member2" value="終身會員" checked>
+            <label for="member2">終身會員</label>
+        </fieldset>
+
+        <!-- 訂閱內容 複選 -->
+        <fieldset style="width: 30%; margin-top: 30px;">
+            <legend>訂閱內容: </legend>
+            <!-- 經濟 -->
+            <input type="checkbox" name="order" id="order1" value="經濟">
+            <label for="order1">經濟</label>
+            <!-- 娛樂 -->
+            <input type="checkbox" name="order" id="order2" value="娛樂">
+            <label for="order2">娛樂</label>
+            <!-- 動物 -->
+            <input type="checkbox" name="order" id="order3" value="動物">
+            <label for="order3">動物</label>
+            <!-- 植物 -->
+            <input type="checkbox" name="order" id="order4" value="植物">
+            <label for="order4">植物</label>
+        </fieldset>
+
+        <!-- 留言 -->
+        <!-- 尺寸可自己設定 -->
+        <label for="message">留言:</label>
+        <textarea name="message" id="message" cols="30" rows="10" title="請填寫留言"></textarea>
+
+        <!-- 送出重填 按鈕 -->
+        <p>
+            <input type="submit" value="送出">
+            <input type="reset" value="重填">
+        </p>
+
+        <small>(此表單僅展示示意，無任何收集資料的功能。)</small>
+    </form>
+</body>
+
+</html>

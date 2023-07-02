@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Fira+Mono&family=Foldit&family=Great+Vibes&family=Indie+Flower&family=Noto+Sans+TC&family=Noto+Serif+TC&family=Pacifico&family=Unna:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&family=Pacifico&display=swap');
+
+/* banner Styles */
+#banner {
+  /* height: 38rem; */
+  color: #fff;
+  background-color: #222;
+}
+
+#banner .content-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#banner .content-slider input {
+  display: none;
+}
+
+#banner .content-slider .slider {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+
+#banner .content-slider .slider .banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: all 0.5s ease;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper {
+  height: 100%;
+  padding-top: 25vh;
+  /* 半透明% transparent */
+  background-image: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.3) 50%, transparent 75%, rgba(0, 0, 0, 0.3) 90%);
+  box-sizing: border-box;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper h2 {
+  padding-bottom: 0.3rem;
+  font-family: 'Kaushan Script', cursive;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: none;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper h1 {
+  font-size: 6rem;
+  line-height: 95%;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper .line {
+  display: block;
+  width: 4rem;
+  height: 0.1875rem;
+  margin: 2.5rem auto;
+  background: #fff;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button {
+  padding-bottom: 5rem;
+  z-index: 15 !important;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a {
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  color: #fff;
+  text-transform: uppercase;
+  border: 0.1875rem solid #fff;
+}
+
+#banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
+  color: #e88382;
+  border-color: #e88382;
+  transition: 0.3s;
+}
+
+#banner .content-slider .slider #top-banner-1 {
+  background: url('images/banner_1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#banner .content-slider .slider #top-banner-2 {
+  background: url('images/banner_2.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#banner .content-slider .slider #top-banner-3 {
+  background: url('images/banner_3.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#banner .content-slider .slider #top-banner-4 {
+  background: url('images/banner_4.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#banner .content-slider .slider #top-banner-5 {
+  background: url('images/banner_5.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#banner .content-slider nav {
+  position: absolute;
+  bottom: 0.5rem;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+}
+
+#banner .content-slider nav .controls {
+  display: block;
+  /* 不換行 */
+  width: 80%;
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+}
+
+#banner .content-slider nav .controls label {
+  position: relative;
+  display: inline-block;
+  /* 不換行 */
+  width: 16%;
+  height: 3.1rem;
+  overflow: hidden;
+  margin: 0 1rem;
+  padding-top: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  color: #f2edf0;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#banner .content-slider nav .controls label .progressbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #e8c8db;
+  z-index: 100;
+}
+
+#banner .content-slider nav .controls label .progressbar .progressbar-fill {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  margin-left: -100%;
+  background: #e88382;
+}
+
+#banner .content-slider nav .controls label span {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#banner .content-slider nav .controls label:hover {
+  color: #e88382;
+}
+
+#banner .content-slider #banner1:checked~.slider #top-banner-1,
+#banner .content-slider #banner2:checked~.slider #top-banner-2,
+#banner .content-slider #banner3:checked~.slider #top-banner-3,
+#banner .content-slider #banner4:checked~.slider #top-banner-4,
+#banner .content-slider #banner5:checked~.slider #top-banner-5 {
+  opacity: 1;
+  z-index: 1;
+}
+
+#banner .content-slider #banner1:checked~nav label:nth-of-type(1),
+#banner .content-slider #banner2:checked~nav label:nth-of-type(2),
+#banner .content-slider #banner3:checked~nav label:nth-of-type(3),
+#banner .content-slider #banner4:checked~nav label:nth-of-type(4),
+#banner .content-slider #banner5:checked~nav label:nth-of-type(5) {
+  cursor: default;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+#banner .content-slider #banner1:checked~nav label:nth-of-type(1) .progressbar,
+#banner .content-slider #banner2:checked~nav label:nth-of-type(2) .progressbar,
+#banner .content-slider #banner3:checked~nav label:nth-of-type(3) .progressbar,
+#banner .content-slider #banner4:checked~nav label:nth-of-type(4) .progressbar,
+#banner .content-slider #banner5:checked~nav label:nth-of-type(5) .progressbar {
+  background: #fff;
+}
+
+#banner .content-slider #banner1:checked~nav label:nth-of-type(1) .progressbar-fill,
+#banner .content-slider #banner2:checked~nav label:nth-of-type(2) .progressbar-fill,
+#banner .content-slider #banner3:checked~nav label:nth-of-type(3) .progressbar-fill,
+#banner .content-slider #banner4:checked~nav label:nth-of-type(4) .progressbar-fill,
+#banner .content-slider #banner5:checked~nav label:nth-of-type(5) .progressbar-fill {
+  animation: progressBarFill 5s linear;
+}
+
+/* Animations */
+@keyframes progressBarFill {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+/* RWD 平板*/
+@media (max-width:992px) {
+  .span_text {
+    display: none;
+  }
+
+  /* 五個線的寬度 */
+  #banner .content-slider nav .controls label {
+    /* margin:  0 16px; */
+    width: 14%;
+  }
+
+  #banner .content-slider nav .controls label .progressbar {
+    height: 6px;
+  }
+  #banner .content-slider .slider .banner .banner-inner-wrapper{
+    padding-top: 35vh;
+  }
+}
+
+/* RWD手機 */
+@media (max-width:576px) {
+  #banner .content-slider .slider .banner .banner-inner-wrapper h2{
+    font-size: 1.5rem;
+  }
+  #banner .content-slider .slider .banner .banner-inner-wrapper h1{
+    font-size: 4rem;
+  }
+  /* 進度條總容量變寬 */
+  #banner .content-slider nav .controls{
+    width: 85%;
+  }
+  /* 進度條本人變短間距變小 */
+  #banner .content-slider nav .controls label {
+    margin:  0 5px;
+    width: 15%;
+  }
+}
+
+/*另外設定Learn More按鈕  */
+.learn-more-button {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-left: 510px; */
+}
+
+/* Learn More按鈕文字 */
+.learn-more-button a {
+  text-align: center;
+  display: block;
+}

@@ -1,0 +1,944 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&family=Pacifico&display=swap');
+
+@font-face {
+    font-family: "Raleway-Light";
+    src: url('/webfonts/Raleway-Light.ttf');
+}
+
+/* UTF-8一定要寫在第一行 */
+/* google font一定要放第二行 */
+
+
+/* eric css reset重製css */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* css滑動效果 */
+/* html,body{
+    scroll-behavior: smooth;
+} */
+
+body {
+    line-height: 1;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        "蘋方-繁", "PingFang TC", "Noto Sans TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* index */
+/* ----------------------------------------共用---------------------------------------- */
+/* 圖片不要間距 */
+
+* {
+    font-family: "Noto Sans TC";
+}
+
+body {
+    line-height: 1;
+    /* clear: both; */
+    /* text-align: center; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+/* a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #1d201d;
+} */
+
+/* 共用 */
+/* 避免圖片產生間距 */
+img {
+    display: block;
+    width: 100%;
+}
+
+/* 首頁區 */
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    width: 70px;
+}
+
+#topbar ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* icon */
+.icon {
+    margin-right: 10%;
+    margin-bottom: 10px;
+}
+
+.icon a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+}
+
+/* :hover */
+
+.icon_fb {
+    background-image: url(images/icon-fb.svg);
+}
+
+.icon_ig {
+    background-image: url(images/icon-ig.svg);
+}
+
+.icon_line {
+    background-image: url(images/icon-line.svg);
+}
+
+.icon_fb:hover {
+    background-image: url(images/icon-fb-hover.svg);
+}
+
+.icon_ig:hover {
+    background-image: url(images/icon-ig-hover.svg);
+}
+
+.icon_line:hover {
+    background-image: url(images/icon-line-hover.svg);
+}
+
+.menu {
+    background-color: transparent;
+    /* 以下取消玻璃擬態效果 */
+    /* 玻璃擬態/毛玻璃 */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* 背景模糊 一定要搭配背景半透明 */
+    backdrop-filter: blur(3px);
+    /* 修改input邊框的預設樣式 */
+    border: none;
+    /* 玻璃陰影+玻璃黑的陰影 */
+    box-shadow: none;
+    margin-right: 40px;
+}
+
+/* 拉線滑動 */
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+.menu li ::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+}
+
+.menu li :hover::after {
+    width: 100%;
+    /* 轉場效果 */
+    transition: .35s;
+}
+
+@media (min-width:577px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* RWD手機 */
+@media (max-width:576px) {
+    #topbar ul{
+        justify-content: center;
+    }
+    .icon{
+        margin-left: auto;
+        margin-right:auto ;
+
+    }
+
+    .icon a{
+        margin: 0 2px;
+    }
+
+    /* 漢堡按鈕  */
+    .nav_box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 40px;
+    }
+
+    /* .navigation {
+        display: flex;
+        justify-content: space-between;
+    } */
+
+    .hamburger {
+        /* 自動抓內容.bar的尺寸 */
+        display: inline-block;
+        cursor: pointer;
+        /* 取消button的預設樣式 */
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .bar {
+        /* 修改span行內元素為區塊 */
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #333;
+        /* 轉場動態 */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu {
+        flex-direction: column;
+        /* 以下取消玻璃擬態效果 */
+        /* 玻璃擬態/毛玻璃 */
+        background-color: transparent;
+        /* 背景模糊 一定要搭配背景半透明 */
+        backdrop-filter: none;
+        /* 修改input邊框的預設樣式 */
+        border: none;
+        /* 玻璃陰影+玻璃黑的陰影 */
+        box-shadow: none;
+        margin-left: auto;
+        margin-right:auto ;
+        text-align: center;
+        /* border: #a35472 solid 5px; */
+    }
+
+    #menu a {
+        padding: 15px 10px;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        padding: 20px;
+        border-radius: 5px;
+        /*   height: 100%; */
+        /* 玻璃擬態/毛玻璃 */
+        background-color: rgba(255, 255, 255, 0.2);
+        /* 背景模糊 一定要搭配背景半透明 */
+        backdrop-filter: blur(3px);
+        /* 修改input邊框的預設樣式 */
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        /* 玻璃陰影+玻璃黑的陰影 */
+        box-shadow: inset -1px -1px -1px rgba(255, 255, 255, 0.3), 2px 2px 5px 2px rgba(0, 0, 0, 0.15);
+        /* background-color: rgba(0, 0, 0, 0.3); */
+        display: none;
+        animation: navigation 0.35s both;
+        /* border: #a35472 solid 5px; */
+    }
+
+    @keyframes navigation {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    .navigation.show {
+        display: block;
+        animation: show 0.35s both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+/* 主要內容共用 */
+/*設定main標籤第一層的所有元素*/
+main>* {
+    /* 視窗相對高度 */
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    /* 設定主軸為垂直 */
+    flex-direction: column;
+    /* 設定主軸垂直置中 */
+    justify-content: center;
+    /* 設定副軸水平置中 */
+    align-items: center;
+    /* 會依照視窗縮放 */
+}
+
+/* 在標題套用google font */
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    padding-top: 20px;
+    /* margin: 50px 0; */
+    border-top: solid 2px rgba(0, 0, 0, .5);
+    /* opacity: .5; */
+}
+
+.list_box {
+    display: flex;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.list_item {
+    flex: 1;
+    margin: 0 15px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    /* 內容溢出時自動隱藏 */
+    overflow: hidden;
+}
+
+.list_item div {
+    padding: 20px;
+}
+
+.list_item h2 {
+    font-family: "Raleway-Light", "sans-serif";
+}
+
+/* news */
+#news {
+    background-color: #f2edf0;
+}
+
+#news figure {
+    height: 35vh;
+}
+
+#news img {
+    /* 圖片符合容器大小  RWD*/
+    /* 會自動置中 */
+    object-fit: cover;
+    height: 100%;
+}
+
+#news p {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin: 15px 0;
+    /* 多行省略文字 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    /* 以上多行省略文字 */
+    /* 中文可以齊行 */
+    /* text-align: justify; */
+}
+
+#news a {
+    display: block;
+    color: black;
+    text-align: right;
+}
+
+/* 底線 */
+#news a:hover {
+    text-decoration: underline;
+}
+
+/* RWD 平板藏最後一個/只要前兩個出現 */
+@media (max-width:992px) {
+    #news .list_item:last-child {
+        display: none;
+    }
+}
+
+/* RWD手機第二個後面都藏起來/只要第一個出現 */
+@media (max-width:576px) {
+    #news .list_item:nth-child(n+2) {
+        display: none;
+    }
+}
+
+
+/* service */
+#service {
+    background-color: #e6ece5;
+}
+
+#service .list_box {
+    height: 60vh;
+}
+
+#service .list_item {
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+#service p {
+    margin-top: 0.6rem;
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 以上單行省略 */
+}
+
+#service a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+}
+
+#service a:hover {
+    /* text-decoration: underline; */
+}
+
+
+.service1 {
+    background-image: url(images/pt_svc1.jpg);
+}
+
+.service2 {
+    background-image: url(images/pt_svc2.jpg);
+}
+
+.service3 {
+    background-image: url(images/pt_svc3.jpg);
+}
+
+.service4 {
+    background-image: url(images/pt_svc4.jpg);
+}
+
+/* RWD平板藏最後兩個 排版變成直的 */
+@media (max-width:992px) {
+    #service .list_box {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    #service .list_item {
+        margin: 2vh 0;
+    }
+
+    #service .list_item:nth-child(n+3) {
+        display: none;
+    }
+}
+
+/* RWD手機藏最後三個 排版變成直的 */
+@media (max-width:576px) {
+    #service .list_item:nth-child(n+2) {
+        display: none;
+    }
+}
+
+/* video區 */
+#video {
+    background-color: #ecf0f4;
+}
+
+#video video {
+    height: 70vh;
+    margin-top: 30px;
+}
+
+/* RWD第一步先找有沒有東西害全部跑版,有的話改寬高 */
+/* 992px以下的尺寸套用@內的css */
+@media (max-width:992px) {
+    #video {
+        height: auto;
+        padding: 5vh 0;
+    }
+
+    #video video {
+        /* 手機和平板寬度用%調整 */
+        width: 85%;
+        height: auto;
+    }
+}
+
+/* about區 */
+#about {
+    position: relative;
+}
+
+#about video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* RWD物件填滿 */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 濾鏡 */
+    /* 亮度brightness 棕色調sepia 透明度opacity */
+    filter: brightness(150%)sepia(10%) opacity(0.4);
+    background-color: #f2edf0;
+}
+
+#about div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    padding: 0 50px;
+    background-color: rgba(232, 172, 190, 0.7);
+
+}
+
+#about p.scrollbox {
+    margin-top: 30px;
+    height: 70vh;
+    overflow: auto;
+    padding: 0 15px;
+}
+
+/* 捲軸樣式修改 codepen */
+.scrollbox::-webkit-scrollbar {
+    width: 10px;
+    background: #eee;
+}
+
+.scrollbox::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.scrollbox::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px;
+    background: #666;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    background: #999;
+}
+
+/* 右下角的角落 這邊用不到 */
+/* .scrollbox::-webkit-scrollbar-corner {
+    background: #ddd;
+  } */
+
+/* RWD平板div內容區變寬 */
+@media (max-width:992px) {
+    #abouy div {
+        width: 85%;
+    }
+
+    #about p {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+}
+
+/* RWD手機 */
+@media (max-width:576px) {
+    #about div {
+        padding: 0 20px;
+    }
+}
+
+/* contact區 */
+#contact {
+    /* 背景圖片 */
+    /* 背景圖片置中縮放 */
+    background-image: url('images/bg_contact.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment 背景附件 */
+    /* 背景圖片不跟著卷軸動 */
+    background-attachment: fixed;
+}
+
+#message_form {
+    width: 35%;
+}
+
+#message_form>* {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+/* 兩個共用 輸入方塊+留言區 */
+#message_form input,
+#message_form textarea {
+    padding: 10px 15px;
+    /* 玻璃擬態/毛玻璃 */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* 背景模糊 一定要搭配背景半透明 */
+    backdrop-filter: blur(3px);
+    /* 修改input邊框的預設樣式 */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* 玻璃陰影+玻璃黑的陰影 */
+    box-shadow: inset -1px -1px -1px rgba(255, 255, 255, 0.3), 2px 2px 5px 2px rgba(0, 0, 0, 0.15);
+    /* 以上玻璃擬態 */
+}
+
+/* 輸入方塊 */
+#message_form input {
+    font-size: .95rem;
+    color: #d49597;
+    border-radius: 100px;
+}
+
+/* 留言區 */
+#message_form textarea {
+    /* 內距會影響 會有卷軸 */
+    height: 4.75rem;
+    border-radius: 10px;
+}
+
+/* 提示文字 */
+::placeholder {
+    color: #9d5557;
+    font-size: .85rem;
+}
+
+#message_form label {
+    margin: 20px 0 10px;
+    font-size: .85rem;
+    letter-spacing: .1rem;
+}
+
+#contact small {
+    margin-top: 1px;
+    font-size: .8rem;
+}
+
+/* css btn */
+#message_form button {
+    /* position: relative; */
+    outline: none;
+    /* text-decoration: none; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 指標:手型 */
+    cursor: pointer;
+    /* text-transform: uppercase; */
+    height: 60px;
+    width: 50% !important;
+    /* 調整水平置中 */
+    margin: 20px auto;
+    /* opacity: 1; */
+    /* background-color: #ffffff; */
+    /* border: 1px solid rgba(22, 76, 167, 0.6); */
+    /* 玻璃擬態/毛玻璃 */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* 背景模糊 一定要搭配背景半透明 */
+    backdrop-filter: blur(3px);
+    /* 修改input邊框的預設樣式 */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* 玻璃陰影+玻璃黑的陰影 */
+    box-shadow: inset -1px -1px -1px rgba(255, 255, 255, 0.3), 2px 2px 5px 2px rgba(0, 0, 0, 0.15);
+}
+
+button span {
+    color: #a35472;
+    font-size: .8rem;
+    /* font-weight: 500; */
+    letter-spacing: 0.7rem;
+}
+
+button:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+/* RWD平板 */
+@media (max-width:992px) {
+    #message_form {
+        width: 50%;
+    }
+
+    #message_form label {
+        margin: 30px 0 10px;
+    }
+
+    #message_form input,
+    #message_form textarea {
+        padding: 20px 25px;
+    }
+
+    ::placeholder {
+        font-size: 1rem;
+    }
+
+    #message_form button {
+        margin: 30px auto;
+    }
+}
+
+/* RWD手機 */
+@media (max-width:992px) {
+    #message_form {
+        width: 70%;
+    }
+
+    #message_form input,
+    #message_form textarea {
+        padding: 10px 15px;
+    }
+
+    #message_form button {
+        width: 75%;
+    }
+}
+
+/* footer */
+footer {
+    background-color: #f2edf0;
+    /* 另一種方法簡化設定寬高 */
+    /* 內距包含背景顏色和圖片 */
+    padding: 50px;
+    text-align: center;
+}
+
+/* gotop */
+/* 一開始不顯示 */
+#gotop{
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgba(232, 172, 190, 0.6);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    font-size: 2.2rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 50px;
+    text-align: center;
+}
+
+
+
+/* position:fixed可用在topbar和gototop和背景圖或影片 */
+
+/* .menu{
+    border:solid 5px red;
+} */
