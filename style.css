@@ -928,16 +928,19 @@ small{
 /* 一開始不顯示 */
 #gotop{
     display: none;
+
     width: 50px;
     height: 50px;
     border-radius: 25px;
     background-color: rgba(232, 172, 190, 0.6);
+
     position: fixed;
     right: 20px;
     bottom: 20px;
     z-index: 999;
+    
     font-size: 2.2rem;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255);
     line-height: 50px;
     text-align: center;
 
