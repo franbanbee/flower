@@ -916,6 +916,13 @@ footer {
     padding: 50px;
     text-align: center;
 }
+small{
+    font-family: "Raleway-Light", "sans-serif";
+    font-size: .8rem;
+    letter-spacing:.1em;
+    line-height: .5rem;
+    color: rgb(0, 0, 0,0.7);
+}
 
 /* gotop */
 /* 一開始不顯示 */
